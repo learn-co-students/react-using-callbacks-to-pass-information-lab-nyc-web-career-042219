@@ -8,10 +8,17 @@ export default class Cell extends Component {
       color: this.props.color
     }
   }
+
+  setCellColor = () =>{
+    console.log(this.props)
+    let newColor = this.props.getSelectedColor();
+    console.log(newColor)
+    this.setState({color: newColor})
+  }
   
   render() {
     return (
-      <div className="cell" style={{backgroundColor: this.state.color}}>
+      <div onClick={this.setCellColor} className="cell" style={{backgroundColor: this.state.color}}>
       </div>
     )
   }
